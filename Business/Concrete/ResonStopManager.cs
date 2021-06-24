@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -19,23 +20,14 @@ namespace Business.Concrete
         }
         public IDataResult<List<ResonStop>> GetAll()
         {
-            return new SuccessDataResult<List<ResonStop>>(_resonStopDal.getAll(), "Duruş nedenleri listelendi");
+            return new SuccessDataResult<List<ResonStop>>(_resonStopDal.GetAll(), Messages.ResonStopsListed);
         }
 
         public IResult Add(ResonStop entity)
         {
             _resonStopDal.Add(entity);
-            return new SuccessResult("Yeni duruş nedeni eklendi.");
+            return new SuccessResult(Messages.ResonStopAdded);
         }
 
-        public IResult Update(ResonStop entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult Delete(ResonStop entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

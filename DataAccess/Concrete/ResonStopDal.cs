@@ -105,7 +105,7 @@ namespace DataAccess.Concrete
          
 
         };
-        public List<ResonStop> getAll()
+        public List<ResonStop> GetAll()
         {
             return workStatus;
         }
@@ -116,14 +116,5 @@ namespace DataAccess.Concrete
             workStatus.Add(entity);
         }
 
-        public void Update(ResonStop entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(ResonStop entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IWorkDal:IEntityDal<Work>
     {
-        List<WorkDetailDto> getAllWorkDetail();
+        List<WorkDetailDto> GetAllWorkDetail();
     }
 }

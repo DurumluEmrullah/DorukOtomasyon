@@ -7,9 +7,7 @@ namespace Core.DataAccess.InMemory
 {
     public interface IEntityDal<T> where T : class, IEntity, new()
     {
-        List<T> getAll();
+        List<T> GetAll();
         void Add(T entity);
-        void Update(T entity);
-        void Delete(T entity);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -19,23 +20,14 @@ namespace Business.Concrete
         }
         public IDataResult<List<Statu>> GetAll()
         {
-            return new SuccessDataResult<List<Statu>>(_statuDal.getAll(), "Duruşlar listelendi");
+            return new SuccessDataResult<List<Statu>>(_statuDal.GetAll(), Messages.StatusListed);
         }
 
         public IResult Add(Statu entity)
         {
             _statuDal.Add(entity);
-            return new SuccessResult("Yeni Duruş Eklendi.");
+            return new SuccessResult(Messages.StatuAdded);
         }
 
-        public IResult Update(Statu entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult Delete(Statu entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

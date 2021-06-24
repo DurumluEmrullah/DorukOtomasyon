@@ -16,7 +16,7 @@ namespace DataAccess.Concrete
             new Statu(){Id = 4,Name = "Arge"}
 
         };
-        public List<Statu> getAll()
+        public List<Statu> GetAll()
         {
             return status;
         }
@@ -27,14 +27,5 @@ namespace DataAccess.Concrete
             status.Add(entity);
         }
 
-        public void Update(Statu entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Statu entity)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

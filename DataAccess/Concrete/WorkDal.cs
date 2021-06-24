@@ -61,7 +61,7 @@ namespace DataAccess.Concrete
                 }
             };
 
-        public List<Work> getAll()
+        public List<Work> GetAll()
         {
             return works;
         }
@@ -72,44 +72,28 @@ namespace DataAccess.Concrete
             works.Add(entity);
         }
 
-        public void Update(Work entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Delete(Work entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<WorkDetailDto> getAllWorkDetail()
+        public List<WorkDetailDto> GetAllWorkDetail()
         {
             IResonStopDal resonStopDal = new ResonStopDal();
-            
-            
-            List<Statu> status = (new StatuDal()).getAll();
+            List<Statu> status = (new StatuDal()).GetAll();
             List<WorkDetailDto> workDetailDtos = new List<WorkDetailDto>();
             foreach (var work in works)
             {
-
                 WorkDetailDto workDetail = new WorkDetailDto();
                 List<ResonStop> resonStops = new List<ResonStop>();
                 workDetail.Name = work.Name;
-                foreach (var resonStop in resonStopDal.getAll())
+                foreach (var resonStop in resonStopDal.GetAll())
                 {
                     if (work.Id == resonStop.WorkId)
                     {
                         resonStops.Add(resonStop);
                     }
                 }
-
                 workDetail.ResonStops = resonStops;
                 workDetailDtos.Add(workDetail);
-                
             }
-
             return workDetailDtos;
-            
         }
     }
 }
